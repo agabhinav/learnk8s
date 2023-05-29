@@ -1,5 +1,6 @@
 
 # Kubernetes 101
+## **Concepts**
 - [Introduction](#introduction)
     - [Understanding Kubernetes (K8s) using an analogy](#analogy)
     - [Sample Use-Cases](#use-cases)
@@ -25,13 +26,14 @@
         - [Container Runtime](#container-runtime)
         - [Kubelet](#kubelet)
         - [Kube-proxy](#kube-proxy)
+---
+
+## **Labs**
 - [LAB: Docker and Minikube in WSL2 Ubuntu](k8s-lab-install-docker-minikube.md)
 - [LAB: Basic kubectl commands](k8s-lab-kubectl.md)
 - [Imperative vs Declarative](k8s-imperative-declarative.md)
 - [Kubeconfig](k8s-kubeconfig.md)
 - [Kubernetes Context](k8s-context.md)
----
-### **Labs**
 - [LAB: namespaces](k8s-lab-namespaces.md)
 - [LAB: Deployment](k8s-lab-deployment.md)
 - [LAB: Service](k8s-lab-service.md)
