@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mycfgmap
+data:
+  # property-like keys; each key maps to a simple value
+  env: dev
+
+  # file-like keys
+  dest.properties: |
+    Q_INPUT=InputQ
+    Q_OUTPUT=OutputQ
+  
+  debug.properties: |
+    TracerMode=always
+    LogLevel=INFO
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: mycontainer
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+    env:
+    # Define the environment variable
+      - name: ENV
+        valueFrom:
+          configMapKeyRef:
+            name: mycfgmap # The ConfigMap this value comes from.
+            key: env # The key to fetch.
+    volumeMounts:
+      - mountPath: /config
+        name: config-vol
+        readOnly: true
+  volumes:
+  # You set volumes at the Pod level, then mount them into containers inside that Pod
+    - name: config-vol
+      configMap:
+        # Provide the name of the ConfigMap you want to mount.
+        name: mycfgmap
+        # An array of keys from the ConfigMap to create as files
+        items:
+          - key: "dest.properties"
+            path: "dest.properties"
+          - key: "debug.properties"
+            path: "debug.properties"

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  # namespace: devns
+  labels:
+    app: nginx
+spec: #DeploymentSpec
+  replicas: 2   
+  selector:
+    matchLabels:
+      app: nginx
+  template: #PodTemplateSpec
+    metadata:
+      labels:
+        app: nginx
+    spec: #PodSpec
+      containers:
+      - name: nginx
+        image: nginx:mainline-alpine3.17-slim
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          name: nginx-pod-port
