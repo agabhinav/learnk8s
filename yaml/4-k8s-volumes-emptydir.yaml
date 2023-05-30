@@ -12,7 +12,7 @@ spec: # PodSpec
         memory: "128Mi"
         cpu: "500m"
     ports:
-      - containerPort: 8080
+      - containerPort: 80
     volumeMounts: # Pod volumes to mount into the container's filesystem
       - mountPath: /cache
         name: cache-volume # This must match the Name of a Volume

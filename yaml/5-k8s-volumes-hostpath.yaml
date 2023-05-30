@@ -12,7 +12,7 @@ spec:
         memory: "128Mi"
         cpu: "500m"
     ports:
-      - containerPort: 8080
+      - containerPort: 80
     volumeMounts:
       - mountPath: /myappdata
         name: myvol-hostpath
