@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pv-pod
+  # namespace: devns
+spec: # PodSpec
+  volumes: # List of volumes that can be mounted by containers belonging to the pod
+    - name: pv-storage
+      persistentVolumeClaim:
+        claimName: demo-pvc
+  containers:
+  - name: demo-pv-container
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+    volumeMounts: # Pod volumes to mount into the container's filesystem
+      - mountPath: /usr/share/nginx/html
+        name: pv-storage # This must match the Name of a Volume
+  
+        

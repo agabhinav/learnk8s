@@ -28,7 +28,7 @@
         - [Kube-proxy](#kube-proxy)
 ---
 
-## **Labs**
+## **More Info + Labs**
 - [LAB: Docker and Minikube in WSL2 Ubuntu](k8s-lab-install-docker-minikube.md)
 - [LAB: Basic kubectl commands](k8s-lab-kubectl.md)
 - [Imperative vs Declarative](k8s-imperative-declarative.md)
@@ -39,6 +39,7 @@
 - [LAB: Service](k8s-lab-service.md)
 - [LAB: Volumes - emptyDir](k8s-lab-volumes-emptydir.md)
 - [LAB: Volumes - hostPath](k8s-lab-volumes-hostpath.md)
+- [LAB: Volumes - local PV, PVC](k8s-lab-volumes-pv-pvc.md)
 - [LAB: Secrets](k8s-lab-secrets.md)
 - [LAB: Using Secrets as environment variables - env](k8s-lab-secrets-usage-env-1.md)
 - [LAB: Using Secrets as environment variables - envFrom](k8s-lab-secrets-usage-env-2.md)

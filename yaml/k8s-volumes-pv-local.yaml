@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: demo-pv
+  labels:
+    type: demo-pv
+spec:
+  storageClassName: local-storage # name of StorageClass to which this pv belongs
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  local: # directly-attached storage with node affinity
+    path: /localstore/data # full path to the volume on the node
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions: # kubectl get nodes --show-labels
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - "minikube"

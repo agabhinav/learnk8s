@@ -74,6 +74,3 @@ This time, Kubernetes generated a new ReplicaSet along with new Pods, while simu
 `kubectl exec -it [POD_NAME] -- bash` – start a bash session in the Pod’s container.
 
 `kubectl delete` - Delete resources by file names, stdin, resources and names, or by resources and label selector. JSON and YAML formats are accepted. E.g. `kubectl delete deployment [DEPLOYMENT_NAME]` – delete the deployment, all the pods and replicasets.
-
-
-

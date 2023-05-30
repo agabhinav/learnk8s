@@ -47,3 +47,15 @@ The `kubectl` command-line tool supports several different ways to create and ma
 This sets the `kubectl.kubernetes.io/last-applied-configuration: '{...}'` annotation on each object. The annotation contains the contents of the object configuration file that was used to create the object.  
 Add the `-R` flag to recursively process directories.  
 
+**Useful info when creating / updating manifest files**  
+`kubectl api-versions`' - Print the supported API versions.  
+
+![kubectl-api-versions](images/kubectl-api-versions.png)
+
+`kubectl api-resources` - Print the supported API resources. This information is useful when working with manifest files. It allows you to determine the `apiVersion` associated with a specific `Kind`.  For example, the `Deployment` resource has an `apiVersion` of `apps/v1`.  
+
+![kubectl-api-resources](images/kubectl-api-resources.png)
+
+To describe the fields associated with each supported API resource, you can utilize the `kubectl explain` command. For instance, running `kubectl explain deployment --api-version=apps/v1` will provide the relevant output.  
+
+![kubectl-explain-deployment](images/kubectl-explain-deployment.png)

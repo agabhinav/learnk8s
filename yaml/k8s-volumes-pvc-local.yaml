@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: demo-pvc
+spec:
+  resources: # minimum resources the volume should have
+    requests: # minimum amount of compute resources required
+      storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage # StorageClass required by the claim

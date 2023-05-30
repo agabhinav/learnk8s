@@ -17,6 +17,13 @@ References:
 A `Secret` object stores sensitive data such as credentials used by Pods to access services. For example, you might need a Secret to store the username and password needed to access a database.  
 Secrets can be mounted as data volumes or exposed as environment variables to be used by a container in a Pod.  
 
+**Create Secret using source files**  
+
+`kubectl create secret generic SECRET_NAME --from-file=FILE_NAME`  
+The default key name is the file name. You can optionally set the key name using `--from-file=[key=]source`.  
+For example:  
+`kubectl create secret generic SECRET_NAME --from-file=KEY=FILE_NAME`
+
 **Create Secret using config file**  
 This example will store two strings, _admin_ and _mypassword_, in a Secret using the `data` field. Convert the strings to base64.  
 
