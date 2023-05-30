@@ -48,7 +48,7 @@ This sets the `kubectl.kubernetes.io/last-applied-configuration: '{...}'` annota
 Add the `-R` flag to recursively process directories.  
 
 **Useful info when creating / updating manifest files**  
-`kubectl api-versions`' - Print the supported API versions.  
+`kubectl api-versions` - Print the supported API versions.  
 
 ![kubectl-api-versions](images/kubectl-api-versions.png)
 
