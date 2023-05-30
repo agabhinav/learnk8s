@@ -28,7 +28,7 @@ spec:
         memory: "128Mi"
         cpu: "500m"
     ports:
-      - containerPort: 8080
+      - containerPort: 80
     env:
     # Define the environment variable
       - name: ENV
