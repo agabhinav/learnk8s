@@ -59,7 +59,6 @@ Exit out of container.
 
 **hostPath data verification - from host**  
 Verify the changes from `hostPath` on the host.  
-Exit out of container.  
 
 ![hostPath data verification - from host](images/k8s-volumes-hostpath-5.png)
 
