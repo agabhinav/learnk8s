@@ -45,6 +45,7 @@
 - [LAB: Using Secrets as environment variables - envFrom](k8s-lab-secrets-usage-env-2.md)
 - [LAB: Using Secrets as volumes](k8s-lab-secrets-usage-vol.md)
 - [LAB: ConfigMap](k8s-lab-configmap.md)
+- [LAB: Jobs](k8s-lab-jobs.md)
 ---
 
 ## Introduction <a name="introduction"></a>

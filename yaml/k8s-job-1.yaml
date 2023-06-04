@@ -1,0 +1,16 @@
+# Start a busybox container which executes some shell commands
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job1
+spec: # JobSpec
+  template: # PodTemplateSpec
+    spec: # PodSpec
+      containers: # List of containers belonging to the pod
+      - name: job-container
+        image: busybox
+        command: ["/bin/sh"]
+        args:
+          - "-c"
+          - "date; echo sleeping..; sleep 100s; echo exiting..; date"
+      restartPolicy: Never
