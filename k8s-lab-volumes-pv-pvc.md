@@ -30,8 +30,6 @@ A local persistent volume represents a local disk directly-attached to a single 
 **Local Persistent Volume vs HostPath Volume**  
 With Local Persistent Volumes, the Kubernetes scheduler ensures that a pod using a Local Persistent Volume is always scheduled to the same node. With HostPath volumes, a pod referencing a HostPath volume may be moved by the scheduler to a different node resulting in data loss.  
 
-With HostPath volumes, a pod referencing a HostPath volume may be moved by the scheduler to a different node resulting in data loss.  
-
 While HostPath volumes may be referenced via a Persistent Volume Claim (PVC) or directly inline in a pod definition, Local Persistent Volumes can only be referenced via a PVC.  
 
 **Create local directory with index.html on the Node**  
