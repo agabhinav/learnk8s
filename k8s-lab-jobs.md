@@ -5,7 +5,7 @@ References:
 
 **Agenda**
 * Overview.
-* Create a ConfigMap and a Pod that uses this ConfigMap.
+* Create a Job.
 * Cleanup.
 
 > Start a Kubernetes cluster using `minikube start`.
