@@ -2,6 +2,8 @@
 
 Ref: [Organizing Cluster Access Using kubeconfig Files](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
+![kubeconfig](images/k8s-kubeconfig.png)
+
 A file that is used to configure access to clusters is called a *kubeconfig* file. With kubeconfig files, you can organize your clusters, users, and namespaces. You can also define contexts to quickly and easily switch between clusters and namespaces.
 
 By default, kubectl looks for kubeconfig in this location `$HOME/.kube/config`.
