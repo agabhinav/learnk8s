@@ -16,6 +16,7 @@
     - [Deployment](#deployment)
     - [StatefulSet](#statefulset)
     - [Namespaces](#namespaces)
+    - [Labels and Selectors](#labels-selectors)
 - [Kubernetes Architecture](#architecture)
     - [Control Plane Components](#control-plane)
         - [API Server](#apiserver)
@@ -99,6 +100,8 @@ When you deploy Kubernetes, you get a cluster. A Kubernetes cluster consists of 
 * A Pod is a group of one or more containers, with shared storage/network resources. Think of a Pod as a wrapper around a single container. This abstraction is done so you can use any container runtime and not just Docker.
 * Each Pod is meant to run a single instance of a given application. If you want to scale your application horizontally (i.e. more instances), you should use multiple Pods, one for each instance. In Kubernetes, this is referred to as replication.
 * Each Pod gets its own internal IP address. A Pod gets a new IP address on re-creation.
+* Some Pods have init containers as well as app containers. By default, init containers run and complete before the app containers are started.
+* Pods are ephemeral, meaning they can be created and destroyed frequently.
 
 **Service** <a name="service"></a>
 
@@ -143,6 +146,7 @@ When you deploy Kubernetes, you get a cluster. A Kubernetes cluster consists of 
 * Desired state is defined in a Deployment, which represents a group of identical Pods. Deployment is an abstraction layer on top of Pods.
 * Deployments manage multiple replicas of your application and automatically replace any failed or unresponsive instances, ensuring the actual state matches the desired state.
 * Replicas of the application are connected to the same Service, which provides a static IP address and acts as a load balancer.
+* Pods are ephemeral. That's why they are used with controllers / operators (e.g. Deployments, ReplicaSets, DaemonSets, Jobs etc.), which handle pods' replication, self-healing, etc.
 
 **StatefulSet** <a name="statefulset"></a>
 
@@ -150,12 +154,23 @@ When you deploy Kubernetes, you get a cluster. A Kubernetes cluster consists of 
 * StatefulSets handle the replication and autoscaling of pods, ensuring database consistency by synchronizing reads and writes.
 * Databases are commonly hosted externally, outside the Kubernetes cluster.
 
-
 **Namespaces** <a name="namespaces"></a>
 
-In Kubernetes, namespaces are a way to logically divide and organize resources within a cluster. They provide a virtual separation of resources, allowing different teams, projects, or applications to coexist within the same Kubernetes cluster without interfering with each other.
+* Logically divide and organize resources within a cluster.
+* They provide a virtual separation of resources, allowing different teams, projects, or applications to coexist within the same Kubernetes cluster without interfering with each other.
+* Think of namespaces as virtual partitions or compartments within a shared Kubernetes environment. They help prevent naming collisions and provide isolation between different sets of resources.
 
-Think of namespaces as virtual partitions or compartments within a shared Kubernetes environment. They help prevent naming collisions and provide isolation between different sets of resources.
+**Labels and Selectors** <a name="labels-selectors"></a>
+
+![Labels and Selectors](images/k8s-labels-selectors.png)
+
+* **Labels**
+    * Key/value pairs attached to objects such as Pods.
+    * Used to organize and select a subset of objects.
+* **Selectors**
+    * Controllers / operators and Services use label selectors to select a subset of objects.
+    * **Equality-Based Selectors**: e.g. *env=dev*: select objects where *env* label is set to value *dev*.
+    * **Set-Based Selectors**: e.g. *env in (dev,qa)*: select objects where *env* label is either *dev* or *qa*, *!app* select objects with no label key *app*.
 
 --- 
 
