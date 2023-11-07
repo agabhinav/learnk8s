@@ -116,10 +116,11 @@ When you deploy Kubernetes, you get a cluster. A Kubernetes cluster consists of 
 
 **Ingress** <a name="ingress"></a>
 
-![k8s-ingress](images/k8s-ingress.png)
+<img src="images/k8s-ingress.png" alt="k8s-ingress" width="50%"/>
 
 * Services in a cluster handle external access to applications and ensure load balancing.
 * Instead of directly accessing a service, requests first go to the ingress, which then forwards them to the appropriate service.
+* Ingress = reverse proxy. Manage access to multiple services from external world. Define rules that target specific services within the cluster.
 
 **ConfigMap and Secret** <a name="cfgmap-secret"></a>
 
