@@ -23,7 +23,7 @@ A service can target a set of Pods using a *label selector*.
 
 Below diagram from Kubernetes documentation shows Services and Labels.
 
-<img src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg" alt="Services and Labels" width="95%">
+<img src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg" alt="Services and Labels" width="80%">
 
 As shown in [LAB: Deployment](k8s-lab-deployment.md), the application isn't accessible from outside the cluster.
 
