@@ -23,7 +23,7 @@ A service can target a set of Pods using a *label selector*.
 
 Below diagram from Kubernetes documentation shows Services and Labels.
 
-![Services and Labels](https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg)
+<img src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg" alt="Services and Labels" width="95%">
 
 As shown in [LAB: Deployment](k8s-lab-deployment.md), the application isn't accessible from outside the cluster.
 
@@ -31,7 +31,7 @@ As shown in [LAB: Deployment](k8s-lab-deployment.md), the application isn't acce
 
 **ClusterIP Service (default)**
 
-Exposes the Service on an internal IP in the cluster. This type makes the Service only reachable from within the cluster.
+Exposes the Service on an internal IP in the cluster. This type makes the Service only reachable from within the cluster. You can expose the Service to the public internet using an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) or a [Gateway](https://gateway-api.sigs.k8s.io/).
 
 **NodePort Service**
 
