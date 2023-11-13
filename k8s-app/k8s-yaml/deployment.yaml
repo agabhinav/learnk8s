@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+spec: # DeploymentSpec
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template: # PodTemplate
+    metadata:
+      labels:
+        app: myapp
+    spec: # PodSpec
+      containers:
+      - name: myapp
+        image: agabhinav/k8s-app:0.0.2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

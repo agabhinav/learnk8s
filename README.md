@@ -49,6 +49,12 @@
 - [LAB: Jobs](k8s-lab-jobs.md)
 ---
 
+## **Running an Express App in Kubernetes**
+- [PART-1: Create an Express App](k8s-app/01-create-express-app.md)
+- [PART-2: Containerize an Application](k8s-app/02-containerize-app.md)
+- [PART-3: Run Application in a K8s Cluster](k8s-app/03-run-app-k8s.md)
+---
+
 ## Introduction <a name="introduction"></a>
 
 Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of applications.
