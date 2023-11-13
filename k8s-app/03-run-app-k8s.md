@@ -1,6 +1,9 @@
 ## Running an Express App in Kubernetes
 ### PART-3: Run Application in a K8s Cluster
 
+References:  
+[LoadBalancer access: minikube tunnel](https://minikube.sigs.k8s.io/docs/handbook/accessing/#loadbalancer-access)  
+
 **Agenda**
 * Run application in a K8s cluster.
 

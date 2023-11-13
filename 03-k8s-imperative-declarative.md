@@ -7,7 +7,7 @@ The `kubectl` command-line tool supports several different ways to create and ma
 **Imperative commands**
 * A user operates directly on live objects in a cluster. The user provides operations to the `kubectl` command as arguments or flags.
 * It provides no history of previous configurations.
-* Example: [Run an instance of the nginx container by creating a Deployment object](k8s-lab-kubectl.md#kubectl-imperative) using `kubectl create deployment` command.
+* Example: [Run an instance of the nginx container by creating a Deployment object](02-k8s-lab-kubectl.md#kubectl-imperative) using `kubectl create deployment` command.
 * Commands do not provide a template for creating new objects.
 * You specify the exact commands to be executed to achieve a specific state. For example, you may use the `kubectl run` command to create a Pod directly.
 

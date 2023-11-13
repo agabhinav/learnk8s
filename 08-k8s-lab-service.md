@@ -25,7 +25,7 @@ Below diagram from Kubernetes documentation shows Services and Labels.
 
 <img src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg" alt="Services and Labels" width="80%">
 
-As shown in [LAB: Deployment](k8s-lab-deployment.md), the application isn't accessible from outside the cluster.
+As shown in [LAB: Deployment](07-k8s-lab-deployment.md), the application isn't accessible from outside the cluster.
 
 ![Deployment: app access error](images/image-1.png)
 
