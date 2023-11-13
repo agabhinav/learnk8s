@@ -55,7 +55,7 @@ metadata:
   labels:
     app: myapp
 spec: # DeploymentSpec
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: myapp
@@ -66,14 +66,30 @@ spec: # DeploymentSpec
     spec: # PodSpec
       containers:
       - name: myapp
-        image: YOUR_DOCKERHUB_ACCOUNT/k8s-app:0.0.1
+        image: agabhinav/k8s-app:0.0.2
+        env: # array of env variables
+          - name: MY_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: MY_POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
         - containerPort: 3000
-
 ```
 
 Create a `service.yaml` as shown below. A `LoadBalancer` service is the standard way to expose a service to the internet. With this method, each service gets its own IP address.  
@@ -152,6 +168,19 @@ HOSTNAME: myapp-cbb8d86c7-2mz48, IP: 10.244.0.4~>
 ~> curl localhost:3000
 HOSTNAME: myapp-cbb8d86c7-v69q9, IP: 10.244.1.5~>
 ~>
+```
+
+Verify env variables by getting a shell to one of the pods. A sample is shown below.  
+
+```
+~/learnk8s/k8s-app/k8s-yaml> k exec -it myapp-67d4f8dc9f-2jqgk -- bash
+root@myapp-67d4f8dc9f-2jqgk:/myapp# env | grep MY_
+MY_NODE_NAME=multinode-m03
+MY_POD_NAMESPACE=default
+MY_POD_IP=10.244.2.3
+MY_POD_NAME=myapp-67d4f8dc9f-2jqgk
+root@myapp-67d4f8dc9f-2jqgk:/myapp# exit
+exit
 ```
 
 Cleanup using `kubectl delete`.
