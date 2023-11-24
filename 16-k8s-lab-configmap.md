@@ -12,8 +12,11 @@ References:
 > Start a Kubernetes cluster using `minikube start`.
 
 **Background**  
-A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.  
-A ConfigMap allows you to decouple environment-specific configuration from your container images, so that your applications are easily portable.  
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. A ConfigMap allows you to decouple environment-specific configuration from your container images, so that your applications are easily portable.  
+Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. This decision should be based on how your application reads its config values.  
+- ConfigMaps consumed as environment variables are not updated automatically and require a pod restart.  
+- ConfigMaps consumed as mounted volumes are updated automatically and don't require a pod restart.  
+**Note:** A container using a ConfigMap as a [subPath](https://kubernetes.io/docs/concepts/storage/volumes#using-subpath) volume mount will not receive ConfigMap updates. 
 
 **Create ConfigMap and Pod using config file**  
 
