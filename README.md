@@ -55,6 +55,10 @@
 - [PART-3: Run Application in a K8s Cluster](k8s-app/03-run-app-k8s.md)
 ---
 
+## **Horizontal Pod Autoscaling and Resources Requests/Limits**
+- [HPA, Resources Requests/Limits](hpa/01-k8s-hpa.md)
+---
+
 ## Introduction <a name="introduction"></a>
 
 Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of applications.
