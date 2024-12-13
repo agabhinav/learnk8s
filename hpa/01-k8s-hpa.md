@@ -255,6 +255,19 @@ kubectl get pods -w
 ```
 ![HPA Demo](hpademo.png)
 
+**Cleanup**
+
+Delete the configuration using `kubectl delete -f YAML_FILE`.
+
+```console
+~/learnk8s/hpa/hpademo-yaml> kubectl delete -f hpademo-hpa.yaml 
+horizontalpodautoscaler.autoscaling "example-hpa" deleted
+~/learnk8s/hpa/hpademo-yaml> kubectl delete -f hpademo-deployment.yaml 
+deployment.apps "example-deployment" deleted
+~/learnk8s/hpa/hpademo-yaml> kubectl get deployments
+No resources found in default namespace.
+~/learnk8s/hpa/hpademo-yaml> kubectl get hpa
+No resources found in default namespace.
 ---
 
 ## Understanding resources requests and limits <a name="k8sresources"></a>
