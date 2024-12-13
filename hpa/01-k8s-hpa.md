@@ -268,6 +268,7 @@ deployment.apps "example-deployment" deleted
 No resources found in default namespace.
 ~/learnk8s/hpa/hpademo-yaml> kubectl get hpa
 No resources found in default namespace.
+```
 ---
 
 ## Understanding resources requests and limits <a name="k8sresources"></a>
