@@ -233,6 +233,13 @@ yes > /dev/null
 ```
 This command keeps the CPU busy by generating a continuous stream of output. It will push CPU usage to 100%.
 
+> **_NOTE:_**  
+> By default, `yes` outputs `y` continuously until interrupted (usually with Ctrl+C). You can specify a different string to be repeated by providing it as an argument, e.g., `yes hello`.  
+>
+>`/dev/null` is a special file that acts as a “black hole.” Any data written to it is discarded immediately.
+>
+> You can use `yes > /dev/null` as a basic tool to test how well a system handles single-threaded CPU-intensive tasks.
+
 **Step 4: Monitor Scaling**
 
 1. **Watch HPA Behavior** using `kubectl get hpa -w`.
